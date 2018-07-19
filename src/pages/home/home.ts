@@ -78,9 +78,11 @@ export class HomePage {
         {
           text: "Listo",
           handler: data =>{
-
+            this.servicioTareas.editarTarea(indiceTarea,data.editarTareaInput);
           }
+
         }
+        
       ]
     });
     alerta.present();
