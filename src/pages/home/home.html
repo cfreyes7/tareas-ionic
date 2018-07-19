@@ -22,14 +22,19 @@
    <ion-item-sliding *ngFor="let tarea of tareas; let indiceTarea = index">
      <ion-item>{{tarea}} </ion-item>
      <ion-item-options side="right">
-      <button ion-button>
+      <button ion-button (click)="archivarTarea(indiceTarea)">
         <ion-icon name="trash"></ion-icon>
       </button>
      </ion-item-options>
+     <ion-item-options side="left">
+        <button ion-button (click)="editarTarea(indiceTarea)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+       </ion-item-options>
     </ion-item-sliding>
  </ion-list>
  <ion-fab bottom right>
-  <button ion-fab (click)="irPaginaTareasArchivadas()">
+  <button ion-fab [navPush]="irPagina">
     <ion-icon name="archive"></ion-icon>
   </button>
  </ion-fab>

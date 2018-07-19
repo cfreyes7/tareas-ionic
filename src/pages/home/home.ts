@@ -10,7 +10,7 @@ import { TareasArchivadasPage } from '../tareas-archivadas/tareas-archivadas';
 export class HomePage {
   tareas = [];
   habilitarOrden = false;
-
+  irPagina = TareasArchivadasPage;
   constructor(
     public navCtrl: NavController,
     private alertController: AlertController,
@@ -55,6 +55,36 @@ export class HomePage {
 
   irPaginaTareasArchivadas(){
     this.navCtrl.push(TareasArchivadasPage);
+  }
+
+  archivarTarea(indiceTarea){
+    this.servicioTareas.archivarTarea(indiceTarea);
+  }
+
+  editarTarea(indiceTarea){
+    let alerta = this.alertController.create({
+      title: "Editar tarea",
+      message: "Por favor ingrese la nueva tarea",
+      inputs:[
+        {
+          name: "editarTareaInput",
+          value: this.tareas[indiceTarea]
+        }
+      ],
+      buttons:[
+        {
+          text: "Cancelar"
+        },
+        {
+          text: "Listo",
+          handler: data =>{
+
+          }
+        }
+      ]
+    });
+    alerta.present();
+
   }
 
 }
