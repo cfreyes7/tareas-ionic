@@ -1,5 +1,6 @@
 {
   "name": "app-tareas",
   "integrations": {},
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "pro_id": "efea0181"
 }
